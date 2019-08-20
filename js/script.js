@@ -13,24 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const container = document.querySelector('#container');
 
-    const allInputs = document.querySelectorAll('input');
-    console.log(allInputs)
+    // const allInputs = document.querySelectorAll('input');
+    // console.log(allInputs)
 
-    console.log(container)
+    // console.log(container)
 
     container.addEventListener('click', function(e) {
-        console.log('container clicked');
-        const inner = e.target;
-        console.log(inner.nodeName)
+        // console.log('container clicked');
+        const boxClicked = e.target;
+        // console.log(inner.nodeName)
 
         console.log()
 
-        if (inner.nodeName == "INPUT") {
+        function awardWinner(cell1, cell2, cell3) {
+
+        }
+
+        if (boxClicked.nodeName == "INPUT") {
             console.log('You clicked an input!');
-            e.target.value = playerTurn;
-            e.target.disabled = true
+            boxClicked.value = playerTurn;
+            boxClicked.disabled = true
             // console.log('Remove this!')
-            // e.target.remove();
+            // boxClicked.remove();
 
             console.log(currentTurn);
 
@@ -38,31 +42,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(`check for winner ${playerTurn}`);
 
                 if ((btn1.value == playerTurn) && (btn2.value == playerTurn) && (btn3.value == playerTurn)) { //Horizontal
-                    alert('winner!')
+                    alert('winner A!')
                     //Disable all buttons
                 } else if ((btn4.value == playerTurn) && (btn5.value == playerTurn) && (btn6.value == playerTurn)) { //Horizontal
-                    alert('winner!')
+                    alert('winner B!')
                     //Disable all buttons
                 } else if ((btn7.value == playerTurn) && (btn8.value == playerTurn) && (btn9.value == playerTurn)) { //Horizontal
-                    alert('winner!')
+                    alert('winner C!')
                     //Disable all buttons
                 } else if ((btn1.value == playerTurn) && (btn4.value == playerTurn) && (btn7.value == playerTurn)) { //Vertical
-                    alert('winner!')
+                    alert('winner D!')
                     //Disable all buttons
                 } else if ((btn2.value == playerTurn) && (btn5.value == playerTurn) && (btn8.value == playerTurn)) { //Vertical
-                    alert('winner!')
+                    alert('winner E!')
                     //Disable all buttons
                 } else if ((btn3.value == playerTurn) && (btn6.value == playerTurn) && (btn9.value == playerTurn)) { //Vertical
-                    alert('winner!')
+                    alert('winner F!')
                     //Disable all buttons
                 } else if ((btn1.value == playerTurn) && (btn5.value == playerTurn) && (btn9.value == playerTurn)) { //Diagonal
-                    alert('winner!')
+                    alert('winner G!')
                     //Disable all buttons
                 } else if ((btn3.value == playerTurn) && (btn5.value == playerTurn) && (btn7.value == playerTurn)) { //Diagonal
-                    alert('winner!')
+                    alert('winner H!')
                     //Disable all buttons
+                } else if (currentTurn == 9) {
+                    alert('It\'s a draw!');
                 }
-            }
+            } 
 
             if (playerTurn == 'X') {
                 playerTurn = 'O';
@@ -70,7 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 playerTurn = 'X';
             }
 
-            currentTurn += 1;
+            if (currentTurn < 9) {
+                currentTurn += 1;
+            } 
         }
     });
 });

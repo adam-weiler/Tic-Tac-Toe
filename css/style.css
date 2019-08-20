@@ -1,5 +1,23 @@
+body {
+    margin: 5% auto;
+    height: 100%;
+    text-align: center;
+}
+
+#container {
+    margin: 0 auto;
+    height: 100%;
+    display: inline-block;
+}
+
 input {
     width: 250px;
     height: 250px;
     font-size: 80px;
+}
+
+.winner {
+    background-color: deepskyblue;
+    border: 1px solid cyan;
+
 }
