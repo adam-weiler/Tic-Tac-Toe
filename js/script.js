@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    let playerTurn = 'X';
     // const btn1 = document.querySelector('button.btn1');
     // const btn2 = document.querySelector('button.btn2');
     // const btn3 = document.querySelector('button.btn3');
@@ -24,11 +25,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log()
 
-        if (inner.nodeName == "BUTTON") {
-            console.log('You clicked a button!');
+        if (inner.nodeName == "INPUT") {
+            console.log('You clicked an input!');
+            e.target.value = playerTurn;
             e.target.disabled = true
             // console.log('Remove this!')
             // e.target.remove();
+
+
+            if (playerTurn == 'X') {
+                playerTurn = 'O';
+            } else if (playerTurn == 'O') {
+                playerTurn = 'X';
+            }
+
         }
     })
 
