@@ -25,8 +25,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log()
 
-        function awardWinner(cell1, cell2, cell3) {
+        function awardWinner(cellA, cellB, cellC) {
+            // console.log(cellA, cellB, cellC);
+            cellA.classList.add('winner');
+            cellB.classList.add('winner');
+            cellC.classList.add('winner');
 
+            btn1.disabled = true;
+            btn2.disabled = true;
+            btn3.disabled = true;
+            btn4.disabled = true;
+            btn5.disabled = true;
+            btn6.disabled = true;
+            btn7.disabled = true;
+            btn8.disabled = true;
+            btn9.disabled = true;
+
+            alert (`${playerTurn} won the game!`);
         }
 
         if (boxClicked.nodeName == "INPUT") {
@@ -42,28 +57,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(`check for winner ${playerTurn}`);
 
                 if ((btn1.value == playerTurn) && (btn2.value == playerTurn) && (btn3.value == playerTurn)) { //Horizontal
-                    alert('winner A!')
+                    awardWinner(btn1, btn2, btn3);
                     //Disable all buttons
                 } else if ((btn4.value == playerTurn) && (btn5.value == playerTurn) && (btn6.value == playerTurn)) { //Horizontal
-                    alert('winner B!')
+                    awardWinner(btn4, btn5, btn6);
                     //Disable all buttons
                 } else if ((btn7.value == playerTurn) && (btn8.value == playerTurn) && (btn9.value == playerTurn)) { //Horizontal
-                    alert('winner C!')
+                    awardWinner(btn7, btn8, btn9);
                     //Disable all buttons
                 } else if ((btn1.value == playerTurn) && (btn4.value == playerTurn) && (btn7.value == playerTurn)) { //Vertical
-                    alert('winner D!')
+                    awardWinner(btn1, btn4, btn7);
                     //Disable all buttons
                 } else if ((btn2.value == playerTurn) && (btn5.value == playerTurn) && (btn8.value == playerTurn)) { //Vertical
-                    alert('winner E!')
+                    awardWinner(btn2, btn5, btn8);
                     //Disable all buttons
                 } else if ((btn3.value == playerTurn) && (btn6.value == playerTurn) && (btn9.value == playerTurn)) { //Vertical
-                    alert('winner F!')
+                    awardWinner(btn3, btn6, btn9);
                     //Disable all buttons
                 } else if ((btn1.value == playerTurn) && (btn5.value == playerTurn) && (btn9.value == playerTurn)) { //Diagonal
-                    alert('winner G!')
+                    awardWinner(btn1, btn5, btn9);
                     //Disable all buttons
                 } else if ((btn3.value == playerTurn) && (btn5.value == playerTurn) && (btn7.value == playerTurn)) { //Diagonal
-                    alert('winner H!')
+                    awardWinner(btn3, btn5, btn7);
                     //Disable all buttons
                 } else if (currentTurn == 9) {
                     alert('It\'s a draw!');
